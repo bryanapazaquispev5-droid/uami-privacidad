@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Política de Privacidad oficial para la aplicación móvil Uami. Conoce cómo tratamos tus datos de forma segura.">
-    <title>Política de Privacidad - Uami</title>
+    <meta name="description" content="Official Privacy Policy for Uami mobile application. Read about how we secure your data.">
+    <title>Privacy Policy - Uami</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -62,22 +62,24 @@
             top: 0;
             z-index: 10;
             backdrop-filter: blur(8px);
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.85);
         }
 
         @media (prefers-color-scheme: dark) {
             header {
-                background-color: rgba(30, 41, 59, 0.8);
+                background-color: rgba(30, 41, 59, 0.85);
             }
         }
 
         .header-container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 0.75rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .brand {
@@ -104,17 +106,58 @@
             box-shadow: var(--shadow-sm);
         }
 
-        .back-link {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
+        /* Google Translate Widget Custom Styling */
+        .translate-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--bg-body);
+            padding: 4px 8px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
         }
 
-        .back-link:hover {
-            color: var(--primary-dark);
-            text-decoration: underline;
+        .translate-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        #google_translate_element {
+            display: inline-block;
+        }
+
+        .goog-te-gadget {
+            font-family: 'Inter', sans-serif !important;
+            font-size: 0.9rem !important;
+        }
+
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 2px 4px !important;
+            border-radius: 4px !important;
+            display: flex !important;
+            align-items: center !important;
+            cursor: pointer;
+        }
+
+        .goog-te-menu-value span {
+            color: var(--text-main) !important;
+            font-weight: 500 !important;
+        }
+
+        .goog-te-menu-value img {
+            display: none !important;
+        }
+
+        .goog-te-banner-frame {
+            display: none !important;
+        }
+
+        body {
+            top: 0 !important;
         }
 
         main {
@@ -256,6 +299,14 @@
             }
             .header-container {
                 padding: 1rem;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .brand {
+                justify-content: center;
+            }
+            .translate-wrapper {
+                justify-content: center;
             }
         }
     </style>
@@ -268,95 +319,99 @@
                 <div class="brand-icon">U</div>
                 <span>Uami</span>
             </a>
-            <a href="#contacto" class="back-link">Contacto</a>
+            
+            <div class="translate-wrapper">
+                <span class="translate-label">Translate:</span>
+                <div id="google_translate_element"></div>
+            </div>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <span class="last-update">Última actualización: 22 de junio de 2026</span>
-            <h1>Política de Privacidad</h1>
-            <p>En Uami nos tomamos muy en serio tu privacidad. Esta política detalla qué información recopilamos, cómo la usamos y qué medidas tomamos para protegerla.</p>
+            <span class="last-update">Last Updated: June 22, 2026</span>
+            <h1>Privacy Policy</h1>
+            <p>At Uami, we are committed to protecting your privacy. This policy outlines what information we collect, how we use it, and the security measures we take to protect it.</p>
         </section>
 
-        <!-- Sección 1: Información General -->
+        <!-- Section 1: General Info -->
         <article class="card">
-            <h2>Información General</h2>
-            <p>La aplicación móvil <strong>Uami</strong> (en adelante, la "Aplicación") es una herramienta dedicada a la recomendación personalizada de recetas de comida, sugerencias de menús y localización de supermercados cercanos. Esta aplicación es operada por sus desarrolladores con el fin de brindar orientación nutricional impulsada por Inteligencia Artificial y traducción de recetas.</p>
-            <p>Al descargar, instalar y utilizar esta Aplicación, aceptas las prácticas descritas en esta Política de Privacidad. Si no estás de acuerdo con estos términos, te solicitamos no utilizar la Aplicación.</p>
+            <h2>General Information</h2>
+            <p>The Uami mobile application (hereinafter referred to as the "Application") is a tool dedicated to personalized meal and recipe recommendations, meal plan suggestions, and locating nearby supermarkets. This application is operated by its developers to provide AI-driven nutritional guidance and translation of recipes.</p>
+            <p>By downloading, installing, and using this Application, you agree to the practices described in this Privacy Policy. If you do not agree with these terms, please do not use the Application.</p>
         </article>
 
-        <!-- Sección 2: Datos que Recopilamos -->
+        <!-- Section 2: Data We Collect -->
         <article class="card">
-            <h2>Datos que Recopilamos</h2>
-            <p>Para ofrecerte la mejor experiencia y el correcto funcionamiento de las funciones de Uami, recopilamos los siguientes tipos de datos:</p>
+            <h2>Data We Collect</h2>
+            <p>To provide you with the best user experience and ensure the proper functioning of Uami, we collect the following types of information:</p>
             
             <div class="highlight-box">
-                <strong>1. Información de la Cuenta y Registro:</strong><br>
-                Utilizamos <strong>Firebase Authentication</strong> para gestionar el registro e inicio de sesión de usuarios. Al registrarte, recopilamos información de contacto básica, como tu dirección de correo electrónico, nombre de usuario y credenciales seguras.
+                <strong>1. Account & Registration Information:</strong><br>
+                We use <strong>Firebase Authentication</strong> to manage user registration and logins. When you register, we collect basic contact information such as your email address, username, and secure credentials.
             </div>
 
             <div class="highlight-box">
-                <strong>2. Preferencias del Usuario y Datos de la App:</strong><br>
-                Almacenamos información sobre tus recetas favoritas, valoraciones, opiniones escritas sobre comidas y tus selecciones de filtros dietéticos. Estos datos se guardan tanto en tu dispositivo (Base de datos Room local) como en nuestros servidores a través de <strong>Firebase Firestore</strong> para sincronizar tu perfil.
+                <strong>2. User Preferences & App Activity Data:</strong><br>
+                We store details about your favorite recipes, user reviews, written comments, and dietary filter preferences. This data is saved both locally on your device (SQLite Room Database) and synced to our servers via <strong>Firebase Firestore</strong> to keep your profile updated across devices.
             </div>
 
             <div class="highlight-box">
-                <strong>3. Ubicación del Dispositivo:</strong><br>
-                Nuestra Aplicación solicita permisos de ubicación precisa (GPS y red) a través de <code>ACCESS_FINE_LOCATION</code> y <code>ACCESS_COARSE_LOCATION</code>. Esta información se procesa <strong>únicamente en tiempo de ejecución</strong> para situarte en el mapa interactivo de Google Maps y mostrarte supermercados cercanos. No almacenamos tu historial de ubicación en nuestros servidores de forma permanente ni la compartimos con terceros.
+                <strong>3. Device Location:</strong><br>
+                Our Application requests precise and approximate location permissions (GPS and network) via <code>ACCESS_FINE_LOCATION</code> and <code>ACCESS_COARSE_LOCATION</code>. This information is processed <strong>only in real-time</strong> on your device to display nearby supermarkets on the Google Maps screen. We do not store your location history on our servers or share it with third parties.
             </div>
 
             <div class="highlight-box">
-                <strong>4. Información del Dispositivo y Conexión:</strong><br>
-                Monitoreamos el estado de tu red con el permiso <code>ACCESS_NETWORK_STATE</code> para asegurar que la aplicación tenga conexión a Internet antes de realizar peticiones al servidor, garantizando una navegación fluida.
+                <strong>4. Device Connection State:</strong><br>
+                We monitor your network connectivity using the <code>ACCESS_NETWORK_STATE</code> permission to ensure the application has an active internet connection before calling our remote API services.
             </div>
         </article>
 
-        <!-- Sección 3: Servicios de Terceros -->
+        <!-- Section 3: Third-Party Services -->
         <article class="card">
-            <h2>Servicios de Terceros y Transferencia de Datos</h2>
-            <p>Uami hace uso de herramientas provistas por proveedores de tecnología líderes para asegurar funciones esenciales:</p>
+            <h2>Third-Party Services & Data Sharing</h2>
+            <p>Uami relies on trusted third-party technology providers to deliver essential app features:</p>
             <ul>
-                <li><strong>Google Firebase (Auth y Firestore):</strong> Para la creación y sincronización segura de cuentas de usuario, almacenamiento de opiniones y recetas favoritas.</li>
-                <li><strong>Firebase Cloud Messaging (FCM):</strong> Usamos el permiso <code>POST_NOTIFICATIONS</code> para enviarte notificaciones push importantes sobre menús y novedades. Puedes desactivarlas en cualquier momento desde los ajustes de tu teléfono.</li>
-                <li><strong>Google Maps SDK / Geo APIs:</strong> Utilizado para renderizar mapas interactivos de supermercados. El uso de los mapas está sujeto a las Políticas de Privacidad de Google.</li>
-                <li><strong>Servicios de IA y Traducción:</strong> Incorporamos herramientas de traducción en el dispositivo y procesamiento de IA (Gemini API) para brindarte consejos de nutrición personalizados y recetas adaptadas en tu idioma local.</li>
+                <li><strong>Google Firebase (Auth & Firestore):</strong> For secure user registration, profile sync, and storage of recipe reviews/favorites.</li>
+                <li><strong>Firebase Cloud Messaging (FCM):</strong> We request the <code>POST_NOTIFICATIONS</code> permission to send push notifications about recipe alerts or food tips. You can opt-out at any time from your device system settings.</li>
+                <li><strong>Google Maps SDK / Geo APIs:</strong> Used to display interactive maps and nearby supermarket points of interest. Use of maps is subject to the Google Privacy Policy.</li>
+                <li><strong>AI & Translation Services:</strong> We use on-device translation tools and the Gemini AI API to compile localized recipes and provide automated nutritional advice.</li>
             </ul>
         </article>
 
-        <!-- Sección 4: Uso de la Información -->
+        <!-- Section 4: How We Use Information -->
         <article class="card">
-            <h2>Cómo Utilizamos tu Información</h2>
-            <p>Los datos que recopilamos se utilizan exclusivamente para los siguientes fines:</p>
+            <h2>How We Use Your Information</h2>
+            <p>We use the collected data solely for the following business purposes:</p>
             <ol>
-                <li><strong>Personalización del Servicio:</strong> Recomendar recetas afines a tus gustos, necesidades alimenticias e ingredientes preferidos.</li>
-                <li><strong>Funcionalidad del Mapa:</strong> Mostrar los establecimientos y supermercados más cercanos a tu posición actual.</li>
-                <li><strong>Interacción Social:</strong> Permitirte publicar valoraciones, comentarios y opiniones públicas sobre las recetas.</li>
-                <li><strong>Mejora del Software:</strong> Detectar y solucionar errores de rendimiento, optimizando la velocidad de la aplicación.</li>
+                <li><strong>Service Personalization:</strong> Recommending recipes that align with your dietary filters and taste preferences.</li>
+                <li><strong>Map Functionality:</strong> Pointing out supermarkets and grocery stores closest to your current location.</li>
+                <li><strong>Social Interaction:</strong> Enabling you to publish reviews, ratings, and comments on recipes.</li>
+                <li><strong>Performance Monitoring:</strong> Identifying software bugs and performance bottlenecks to improve app speed.</li>
             </ol>
         </article>
 
-        <!-- Sección 5: Seguridad de los Datos -->
+        <!-- Section 5: Data Security -->
         <article class="card">
-            <h2>Seguridad de los Datos</h2>
-            <p>La seguridad de tu información personal es nuestra prioridad. Implementamos medidas de protección de nivel industrial a través del ecosistema de seguridad de Google Firebase, que utiliza cifrado en tránsito y almacenamiento en la nube altamente protegido.</p>
-            <p>A pesar de nuestros esfuerzos, te recordamos que ningún método de transmisión por Internet o almacenamiento electrónico es 100% seguro, por lo que no podemos garantizar su seguridad absoluta.</p>
+            <h2>Data Security</h2>
+            <p>We prioritize the security of your personal data. We implement industry-standard security measures through Google Firebase, which secures database connections with encryption in transit and holds data in highly protected cloud facilities.</p>
+            <p>However, please note that no method of transmission over the internet or method of electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
         </article>
 
-        <!-- Sección 6: Control de tus Datos (Eliminación de Cuenta) -->
+        <!-- Section 6: Account Deletion & User Rights -->
         <article class="card">
-            <h2>Derechos del Usuario e Habilitación de Borrado</h2>
-            <p>Tienes total control sobre tus datos personales:</p>
+            <h2>User Rights & Account Deletion</h2>
+            <p>You have full control over your personal information:</p>
             <ul>
-                <li><strong>Acceso y Modificación:</strong> Puedes ver y editar tus datos de perfil en cualquier momento desde la pantalla de perfil en la aplicación.</li>
-                <li><strong>Eliminación de Datos:</strong> Si deseas eliminar tu cuenta de usuario de Uami y todos los datos asociados (como tus favoritos y opiniones en Firestore), puedes hacerlo enviando una solicitud por correo electrónico a nuestra dirección de contacto detallada abajo. Procesaremos tu solicitud en un plazo máximo de 7 días hábiles.</li>
+                <li><strong>Access and Modify:</strong> You can view and edit your profile information at any time within the app's Profile screen.</li>
+                <li><strong>Data Deletion:</strong> If you wish to delete your account and all associated user data stored in Firebase (including favorites and reviews), you can make a request by emailing our support contact below. We will process and fulfill your request within 7 business days.</li>
             </ul>
         </article>
 
-        <!-- Sección 7: Contacto -->
+        <!-- Section 7: Contact Us -->
         <article class="card" id="contacto">
-            <h2>Contacto</h2>
-            <p>Si tienes preguntas, dudas o comentarios acerca de esta Política de Privacidad o del tratamiento de tus datos en Uami, puedes ponerte en contacto con nosotros en:</p>
+            <h2>Contact Us</h2>
+            <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your data, please contact us at:</p>
             <p style="margin-top: 1rem; font-weight: 600; font-size: 1.1rem; text-align: center;">
                 <a href="mailto:bryanapazaquispev5@gmail.com" style="color: var(--primary); text-decoration: none; padding: 0.5rem 1rem; border: 2px solid var(--primary-light); border-radius: var(--radius-md); display: inline-block; transition: background-color 0.2s;">
                     ✉ bryanapazaquispev5@gmail.com
@@ -366,9 +421,21 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Uami. Todos los derechos reservados.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Desarrollado con fines de publicación en Google Play Console.</p>
+        <p>&copy; 2026 Uami. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Developed for Google Play Store publication compliance.</p>
     </footer>
+
+    <!-- Google Translate Script Integration -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
