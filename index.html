@@ -53,6 +53,7 @@
             line-height: 1.7;
             padding: 0;
             min-height: 100vh;
+            top: 0 !important; /* Prevent Google Translate from shifting the page down */
         }
 
         header {
@@ -106,60 +107,95 @@
             box-shadow: var(--shadow-sm);
         }
 
-        /* Google Translate Widget Custom Styling */
+        /* ─── Premium Google Translate Dropdown Styling ─── */
         .translate-wrapper {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            background-color: var(--bg-body);
+            background-color: var(--bg-card);
             padding: 4px 8px;
             border-radius: var(--radius-md);
             border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.25s ease;
+        }
+
+        .translate-wrapper:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
         }
 
         .translate-label {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
             font-size: 0.8rem;
             font-weight: 600;
             color: var(--text-muted);
             text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        #google_translate_element {
-            display: inline-block;
+        .translate-icon {
+            font-size: 1rem;
         }
 
-        .goog-te-gadget {
-            font-family: 'Inter', sans-serif !important;
-            font-size: 0.9rem !important;
-        }
-
-        .goog-te-gadget-simple {
-            background-color: transparent !important;
-            border: none !important;
-            padding: 2px 4px !important;
-            border-radius: 4px !important;
-            display: flex !important;
-            align-items: center !important;
-            cursor: pointer;
-        }
-
-        .goog-te-menu-value span {
+        /* Target the actual native select dropdown rendered by Google Translate */
+        select.goog-te-combo {
+            background-color: var(--bg-body) !important;
             color: var(--text-main) !important;
-            font-weight: 500 !important;
+            border: 1px solid var(--border-color) !important;
+            padding: 6px 32px 6px 12px !important;
+            border-radius: 8px !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 0.85rem !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+            outline: none !important;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+            appearance: none !important;
+            -webkit-appearance: none !important;
+            -moz-appearance: none !important;
+            /* Custom minimalist arrow SVG */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2310b981'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E") !important;
+            background-repeat: no-repeat !important;
+            background-position: right 10px center !important;
+            background-size: 14px !important;
         }
 
-        .goog-te-menu-value img {
+        select.goog-te-combo:hover {
+            border-color: var(--primary) !important;
+            box-shadow: var(--shadow-sm) !important;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            select.goog-te-combo {
+                background-color: var(--bg-card) !important;
+                border-color: #334155 !important;
+            }
+        }
+
+        /* Completely hide Google branding, powered by texts and banner frame */
+        .goog-te-gadget {
+            font-size: 0 !important;
+            color: transparent !important;
+        }
+
+        .goog-te-gadget span,
+        .goog-te-gadget .goog-logo-link,
+        .goog-te-banner-frame,
+        #goog-gt-tt,
+        .goog-tooltip,
+        .goog-tooltip:hover {
             display: none !important;
         }
 
-        .goog-te-banner-frame {
-            display: none !important;
+        .goog-text-highlight {
+            background-color: transparent !important;
+            box-shadow: none !important;
         }
 
-        body {
-            top: 0 !important;
-        }
-
+        /* ─── Main Content Styling ─── */
         main {
             max-width: 900px;
             margin: 2rem auto 4rem;
@@ -321,7 +357,9 @@
             </a>
             
             <div class="translate-wrapper">
-                <span class="translate-label">Translate:</span>
+                <span class="translate-label">
+                    <span class="translate-icon">🌐</span> Language:
+                </span>
                 <div id="google_translate_element"></div>
             </div>
         </div>
@@ -430,7 +468,6 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
         }
