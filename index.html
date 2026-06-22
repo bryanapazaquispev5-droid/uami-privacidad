@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de Privacidad oficial para la aplicación móvil Uami. Conoce cómo tratamos tus datos de forma segura.">
+    <title>Política de Privacidad - Uami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #ecfdf5;
+            --secondary: #0f172a;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius-lg: 16px;
+            --radius-md: 12px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #34d399;
+                --primary-dark: #10b981;
+                --primary-light: #064e3b;
+                --secondary: #f8fafc;
+                --text-main: #cbd5e1;
+                --text-muted: #94a3b8;
+                --bg-body: #0f172a;
+                --bg-card: #1e293b;
+                --border-color: #334155;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            header {
+                background-color: rgba(30, 41, 59, 0.8);
+            }
+        }
+
+        .header-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .brand-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .back-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2.5rem 1rem;
+            background: linear-gradient(185deg, var(--primary-light), transparent);
+            border-radius: var(--radius-lg);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .last-update {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--primary-dark);
+            background-color: var(--primary-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.5rem;
+        }
+
+        .card h2::before {
+            content: "✓";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            border-radius: 50%;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .card p, .card ul, .card ol {
+            margin-bottom: 1.25rem;
+        }
+
+        .card p:last-child, .card ul:last-child, .card ol:last-child {
+            margin-bottom: 0;
+        }
+
+        .card ul {
+            list-style-position: inside;
+            padding-left: 0.5rem;
+        }
+
+        .card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 1.25rem;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            color: var(--text-main);
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box strong {
+            color: var(--secondary);
+        }
+
+        footer {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            .header-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="brand">
+                <div class="brand-icon">U</div>
+                <span>Uami</span>
+            </a>
+            <a href="#contacto" class="back-link">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <span class="last-update">Última actualización: 22 de junio de 2026</span>
+            <h1>Política de Privacidad</h1>
+            <p>En Uami nos tomamos muy en serio tu privacidad. Esta política detalla qué información recopilamos, cómo la usamos y qué medidas tomamos para protegerla.</p>
+        </section>
+
+        <!-- Sección 1: Información General -->
+        <article class="card">
+            <h2>Información General</h2>
+            <p>La aplicación móvil <strong>Uami</strong> (en adelante, la "Aplicación") es una herramienta dedicada a la recomendación personalizada de recetas de comida, sugerencias de menús y localización de supermercados cercanos. Esta aplicación es operada por sus desarrolladores con el fin de brindar orientación nutricional impulsada por Inteligencia Artificial y traducción de recetas.</p>
+            <p>Al descargar, instalar y utilizar esta Aplicación, aceptas las prácticas descritas en esta Política de Privacidad. Si no estás de acuerdo con estos términos, te solicitamos no utilizar la Aplicación.</p>
+        </article>
+
+        <!-- Sección 2: Datos que Recopilamos -->
+        <article class="card">
+            <h2>Datos que Recopilamos</h2>
+            <p>Para ofrecerte la mejor experiencia y el correcto funcionamiento de las funciones de Uami, recopilamos los siguientes tipos de datos:</p>
+            
+            <div class="highlight-box">
+                <strong>1. Información de la Cuenta y Registro:</strong><br>
+                Utilizamos <strong>Firebase Authentication</strong> para gestionar el registro e inicio de sesión de usuarios. Al registrarte, recopilamos información de contacto básica, como tu dirección de correo electrónico, nombre de usuario y credenciales seguras.
+            </div>
+
+            <div class="highlight-box">
+                <strong>2. Preferencias del Usuario y Datos de la App:</strong><br>
+                Almacenamos información sobre tus recetas favoritas, valoraciones, opiniones escritas sobre comidas y tus selecciones de filtros dietéticos. Estos datos se guardan tanto en tu dispositivo (Base de datos Room local) como en nuestros servidores a través de <strong>Firebase Firestore</strong> para sincronizar tu perfil.
+            </div>
+
+            <div class="highlight-box">
+                <strong>3. Ubicación del Dispositivo:</strong><br>
+                Nuestra Aplicación solicita permisos de ubicación precisa (GPS y red) a través de <code>ACCESS_FINE_LOCATION</code> y <code>ACCESS_COARSE_LOCATION</code>. Esta información se procesa <strong>únicamente en tiempo de ejecución</strong> para situarte en el mapa interactivo de Google Maps y mostrarte supermercados cercanos. No almacenamos tu historial de ubicación en nuestros servidores de forma permanente ni la compartimos con terceros.
+            </div>
+
+            <div class="highlight-box">
+                <strong>4. Información del Dispositivo y Conexión:</strong><br>
+                Monitoreamos el estado de tu red con el permiso <code>ACCESS_NETWORK_STATE</code> para asegurar que la aplicación tenga conexión a Internet antes de realizar peticiones al servidor, garantizando una navegación fluida.
+            </div>
+        </article>
+
+        <!-- Sección 3: Servicios de Terceros -->
+        <article class="card">
+            <h2>Servicios de Terceros y Transferencia de Datos</h2>
+            <p>Uami hace uso de herramientas provistas por proveedores de tecnología líderes para asegurar funciones esenciales:</p>
+            <ul>
+                <li><strong>Google Firebase (Auth y Firestore):</strong> Para la creación y sincronización segura de cuentas de usuario, almacenamiento de opiniones y recetas favoritas.</li>
+                <li><strong>Firebase Cloud Messaging (FCM):</strong> Usamos el permiso <code>POST_NOTIFICATIONS</code> para enviarte notificaciones push importantes sobre menús y novedades. Puedes desactivarlas en cualquier momento desde los ajustes de tu teléfono.</li>
+                <li><strong>Google Maps SDK / Geo APIs:</strong> Utilizado para renderizar mapas interactivos de supermercados. El uso de los mapas está sujeto a las Políticas de Privacidad de Google.</li>
+                <li><strong>Servicios de IA y Traducción:</strong> Incorporamos herramientas de traducción en el dispositivo y procesamiento de IA (Gemini API) para brindarte consejos de nutrición personalizados y recetas adaptadas en tu idioma local.</li>
+            </ul>
+        </article>
+
+        <!-- Sección 4: Uso de la Información -->
+        <article class="card">
+            <h2>Cómo Utilizamos tu Información</h2>
+            <p>Los datos que recopilamos se utilizan exclusivamente para los siguientes fines:</p>
+            <ol>
+                <li><strong>Personalización del Servicio:</strong> Recomendar recetas afines a tus gustos, necesidades alimenticias e ingredientes preferidos.</li>
+                <li><strong>Funcionalidad del Mapa:</strong> Mostrar los establecimientos y supermercados más cercanos a tu posición actual.</li>
+                <li><strong>Interacción Social:</strong> Permitirte publicar valoraciones, comentarios y opiniones públicas sobre las recetas.</li>
+                <li><strong>Mejora del Software:</strong> Detectar y solucionar errores de rendimiento, optimizando la velocidad de la aplicación.</li>
+            </ol>
+        </article>
+
+        <!-- Sección 5: Seguridad de los Datos -->
+        <article class="card">
+            <h2>Seguridad de los Datos</h2>
+            <p>La seguridad de tu información personal es nuestra prioridad. Implementamos medidas de protección de nivel industrial a través del ecosistema de seguridad de Google Firebase, que utiliza cifrado en tránsito y almacenamiento en la nube altamente protegido.</p>
+            <p>A pesar de nuestros esfuerzos, te recordamos que ningún método de transmisión por Internet o almacenamiento electrónico es 100% seguro, por lo que no podemos garantizar su seguridad absoluta.</p>
+        </article>
+
+        <!-- Sección 6: Control de tus Datos (Eliminación de Cuenta) -->
+        <article class="card">
+            <h2>Derechos del Usuario e Habilitación de Borrado</h2>
+            <p>Tienes total control sobre tus datos personales:</p>
+            <ul>
+                <li><strong>Acceso y Modificación:</strong> Puedes ver y editar tus datos de perfil en cualquier momento desde la pantalla de perfil en la aplicación.</li>
+                <li><strong>Eliminación de Datos:</strong> Si deseas eliminar tu cuenta de usuario de Uami y todos los datos asociados (como tus favoritos y opiniones en Firestore), puedes hacerlo enviando una solicitud por correo electrónico a nuestra dirección de contacto detallada abajo. Procesaremos tu solicitud en un plazo máximo de 7 días hábiles.</li>
+            </ul>
+        </article>
+
+        <!-- Sección 7: Contacto -->
+        <article class="card" id="contacto">
+            <h2>Contacto</h2>
+            <p>Si tienes preguntas, dudas o comentarios acerca de esta Política de Privacidad o del tratamiento de tus datos en Uami, puedes ponerte en contacto con nosotros en:</p>
+            <p style="margin-top: 1rem; font-weight: 600; font-size: 1.1rem; text-align: center;">
+                <a href="mailto:bryanapazaquispev5@gmail.com" style="color: var(--primary); text-decoration: none; padding: 0.5rem 1rem; border: 2px solid var(--primary-light); border-radius: var(--radius-md); display: inline-block; transition: background-color 0.2s;">
+                    ✉ bryanapazaquispev5@gmail.com
+                </a>
+            </p>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Uami. Todos los derechos reservados.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Desarrollado con fines de publicación en Google Play Console.</p>
+    </footer>
+
+</body>
+</html>
